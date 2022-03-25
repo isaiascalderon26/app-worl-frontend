@@ -1,0 +1,28 @@
+<mat-grid-list cols="1" *ngIf="!user; else divUser">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divUser>
+    <div fxLayout="row" fxLayout.xs="column" fxLayout="center" fxLayoutGap="30px"  *ngFor="let user of user.posts">
+    
+        <div fxFlex="50">
+            <img mat-card-image src="assets/usuarios/{{user._id}}.jpeg">
+            <mat-divider></mat-divider>
+            <h1>{{user.tag}}</h1>
+        </div>
+        <div fxFlex="50">
+            <mat-list>
+                <mat-list-item>{{user.text}}</mat-list-item>
+                <mat-list-item>{{user.image}}</mat-list-item>
+                <mat-list-item>{{user.date | date:'dd/MM/yyyy'}}</mat-list-item>
+                <mat-list-item>{{user.title}}</mat-list-item>
+            </mat-list>
+            <button mat-button color="warn"(click)="regresar()">
+                Regresar
+            </button>
+        </div>
+    </div>
+    
+</ng-template>

@@ -1,0 +1,33 @@
+<h1>Recent Post</h1>
+<mat-divider></mat-divider>
+<br>
+
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayout="center" fxLayoutGap="20px">
+    
+    <div fxFlex="30" fxFlex.lg="15" fxFlex.sm="50" *ngFor="let user of users">
+    <mat-card>
+        <img mat-card-image src="assets/usuarios/{{user._id}}.jpeg">
+        <mat-card-header>
+        <mat-card-title>{{user.tag}}</mat-card-title>
+        <mat-card-subtitle>{{user.date | date:'dd/MM/yyyy'}}</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+        <h3></h3>
+        <p>
+            <strong>{{user.title}}</strong>
+            <br>
+            <strong>{{user.text}}</strong>
+        </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-button color="info" [routerLink]="['/listado', user._id]">
+            Read More..
+        </button>
+        <button mat-button color="info" [routerLink]="['/listado/editar', user._id]">
+            Edit
+        </button>
+    </mat-card-actions>
+    </mat-card>
+</div>
+</div>

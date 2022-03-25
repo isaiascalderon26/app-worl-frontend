@@ -1,0 +1,60 @@
+<h1>New register<small> {{post.title}}</small></h1>
+<div fxLayout="row" fxLayout.xs="column" fxLayout="center" fxLayoutGap="40px">
+    
+    <div fxFlex="50" fxLayout="column">
+        <mat-form-field fxFlex="100"> 
+            <mat-label>ID</mat-label>
+            <input matInput
+                    type="text"
+                    [(ngModel)]="post._id"
+                    required>
+        </mat-form-field>
+        <mat-form-field fxFlex="100"> 
+            <mat-label>Title</mat-label>
+            <input matInput
+                    type="text"
+                    [(ngModel)]="post.title"
+                    required>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100"> 
+            <mat-label>Text</mat-label>
+            <input matInput
+                    type="text"
+                    [(ngModel)]="post.text"
+                    required>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100"> 
+            <mat-label>Tag</mat-label>
+            <input matInput
+                    type="text"
+                    [(ngModel)]="post.tag"
+                    required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Image Post</mat-label>
+            <input matInput
+                    type="text"
+                    [(ngModel)]="post.image"
+                    required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Date</mat-label>
+            <input matInput
+                    type="text"
+                    [(ngModel)]="post.date"
+                    required>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="save">
+            <mat-icon>edit</mat-icon>
+            Save
+        </button>
+    </div>
+
+    <div fxFlex="50" >
+        <img [src] = "">
+    </div>
+</div>
